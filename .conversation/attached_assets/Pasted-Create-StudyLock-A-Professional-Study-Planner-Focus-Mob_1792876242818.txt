@@ -1,0 +1,623 @@
+Create StudyLock — A Professional Study Planner & Focus Mobile App
+
+You are an expert mobile app developer, UI/UX designer, and software architect.
+
+Build a complete, modern, professional mobile application called StudyLock.
+
+I want a real functional mobile application, not a landing page, not a static mockup, and not a simple website.
+
+The application should help students create study schedules, organize subjects, manage tasks, focus during study sessions, and reduce smartphone distractions.
+
+The app should support Android and iOS.
+
+Prioritize a fully functional MVP first, then implement advanced features.
+
+---
+
+1. Technology Requirements
+
+Use the following stack:
+
+- React Native.
+- Expo.
+- TypeScript.
+- Expo Router for navigation.
+- Expo-compatible libraries.
+- AsyncStorage or SQLite for persistent local data.
+- Expo Notifications for local reminders.
+- React Native Reanimated for animations.
+- Lucide icons for React Native.
+- Native platform integrations for Android and iOS app blocking when possible.
+
+Use a clean and maintainable project structure.
+
+The application must be designed for mobile devices first.
+
+Do not build a website that merely looks like a mobile application.
+
+Do not use a WebView as a substitute for a native mobile application.
+
+Use Expo-compatible solutions wherever possible.
+
+If a feature requires native code or a development build, explain that requirement and implement the appropriate architecture.
+
+---
+
+2. Application Identity
+
+Application name: StudyLock
+
+Tagline: Focus on your goals. Lock away distractions.
+
+Application concept:
+
+StudyLock allows students to create personalized study schedules and focus sessions.
+
+Users can select subjects, set study times, define study tasks, and activate a focus mode that restricts distracting applications where the operating system allows it.
+
+The application should encourage productivity without unnecessary stress.
+
+---
+
+3. Design System
+
+Create a premium, modern, clean, and professional interface.
+
+Visual style:
+
+- Minimalist.
+- Modern.
+- Friendly.
+- Premium productivity app.
+- Smooth animations.
+- Clear typography.
+- Spacious layouts.
+- Rounded cards.
+- Subtle shadows.
+- Beautiful charts.
+- Responsive mobile layouts.
+
+Colors:
+
+Primary blue: #2563EB
+
+Secondary green: #16A34A
+
+Background: #FFFFFF
+
+Secondary background: #F8FAFC
+
+Primary text: #0F172A
+
+Secondary text: #64748B
+
+Danger: #EF4444
+
+Use a consistent design system throughout the application.
+
+Implement light mode and dark mode.
+
+Support Arabic and English.
+
+Arabic must use proper RTL layout.
+
+Use Cairo or Tajawal for Arabic typography when available.
+
+The default language should be Arabic.
+
+---
+
+4. Main Navigation
+
+Create a bottom navigation bar containing:
+
+- Home
+- Schedule
+- Focus
+- Progress
+- Settings
+
+Each navigation item should have:
+
+- An icon.
+- A label.
+- Active and inactive states.
+- Smooth transitions.
+
+Make the navigation intuitive and consistent.
+
+---
+
+5. Home Screen
+
+Create a beautiful dashboard.
+
+Display:
+
+- Greeting.
+- Current date.
+- Daily study progress.
+- Today's study sessions.
+- Next upcoming session.
+- Remaining time until the next session.
+- Total planned study time.
+- Completed study sessions.
+- Current focus status.
+
+Add two primary buttons:
+
+1. Start Focus.
+2. Create Study Session.
+
+Display the next study session in a beautiful card.
+
+When no sessions exist, show an attractive empty state with a button to create a schedule.
+
+---
+
+6. Weekly Study Planner
+
+Create a fully functional weekly study planner.
+
+Users must be able to:
+
+- Create study sessions.
+- Edit sessions.
+- Delete sessions.
+- Duplicate sessions.
+- Select subjects.
+- Select weekdays.
+- Choose start and end times.
+- Set recurring sessions.
+- Add notes.
+- Add tasks.
+- Set reminders.
+- View daily schedules.
+- View weekly schedules.
+
+Each study session should contain:
+
+- ID.
+- Subject.
+- Date.
+- Start time.
+- End time.
+- Duration.
+- Tasks.
+- Notes.
+- Reminder settings.
+- Completion status.
+
+Use a clean visual calendar.
+
+Different subjects should have different colors.
+
+Prevent invalid time ranges.
+
+Support overlapping sessions with a clear warning.
+
+Persist all schedule data locally.
+
+---
+
+7. Subject Management
+
+Allow users to:
+
+- Add subjects.
+- Edit subjects.
+- Delete subjects.
+- Select subject colors.
+- Add subject descriptions.
+- Set priorities.
+- Associate sessions with subjects.
+
+Create beautiful subject cards.
+
+Example subjects:
+
+- Mathematics.
+- Physics.
+- Chemistry.
+- Biology.
+- English.
+- Arabic.
+
+These examples should not be hardcoded as the only available subjects.
+
+---
+
+8. Study Tasks
+
+Create a complete task management system.
+
+Users can add tasks to study sessions.
+
+Each task should include:
+
+- Title.
+- Description.
+- Priority.
+- Estimated duration.
+- Completion status.
+
+Allow users to:
+
+- Create tasks.
+- Edit tasks.
+- Delete tasks.
+- Mark tasks complete.
+- Reorder tasks.
+- View task completion progress.
+
+Example:
+
+Mathematics:
+
+- Read chapter 3.
+- Solve exercises 1–20.
+- Review previous notes.
+
+Display a progress indicator for each session.
+
+---
+
+9. Focus Mode
+
+This is the core feature of StudyLock.
+
+Create a beautiful and distraction-free focus screen.
+
+Display:
+
+- Large circular countdown timer.
+- Subject name.
+- Current task.
+- Study session progress.
+- Session start time.
+- Scheduled end time.
+- Task checklist.
+- Pause and resume controls.
+- End session button.
+
+When a session begins:
+
+1. Save the session start timestamp.
+2. Start the focus timer.
+3. Activate supported app restrictions.
+4. Schedule relevant notifications.
+5. Track completed tasks.
+6. Keep the session state persistent.
+
+The timer must remain accurate if the application moves into the background.
+
+Do not rely on JavaScript timers alone for background accuracy.
+
+Calculate remaining time using timestamps.
+
+Handle application restarts correctly.
+
+Display a completion screen when the session finishes.
+
+---
+
+10. Strict App Blocking
+
+Implement the strongest legitimate application-blocking functionality supported by Android and iOS.
+
+This feature must not be simulated.
+
+Do not claim that applications are blocked if they are not actually blocked.
+
+Android
+
+Investigate the appropriate native APIs and integrations.
+
+Consider:
+
+- UsageStatsManager.
+- Usage Access permission.
+- AccessibilityService where appropriate and permitted.
+- Android native services.
+- Application selection.
+- Restriction screens.
+
+Requirements:
+
+- Allow users to select distracting applications.
+- Activate restrictions during focus sessions.
+- Detect restricted application launches where technically supported.
+- Explain required permissions.
+- Handle denied permissions gracefully.
+- Restore access after a session ends.
+
+Do not use hidden APIs.
+
+Do not deceive users into granting permissions.
+
+Do not promise universal blocking through UsageStatsManager alone.
+
+If Expo Go cannot support the required integration, use an Expo development build or an appropriate native module.
+
+iOS
+
+Investigate Apple's Screen Time APIs:
+
+- FamilyControls.
+- ManagedSettings.
+- DeviceActivity.
+- FamilyActivityPicker.
+- DeviceActivityMonitor.
+
+Implement the appropriate native integration if possible.
+
+Account for Apple's Family Controls entitlement requirements.
+
+Explain any required Apple Developer configuration.
+
+If full blocking is unavailable in the current development environment, implement a proper architecture for the native integration and provide a functional alternative.
+
+Do not falsely advertise native app blocking.
+
+---
+
+11. Focus Session Rules
+
+Support these session states:
+
+- Scheduled.
+- Ready.
+- Active.
+- Paused.
+- Completed.
+- Cancelled.
+
+Allow users to configure:
+
+- Study duration.
+- Break duration.
+- Restricted applications.
+- Early completion behavior.
+- Automatic session start.
+- Focus reminders.
+
+Allow an emergency exit.
+
+Do not make the application impossible to exit.
+
+The application must never claim to lock the entire phone.
+
+---
+
+12. Break System
+
+Implement:
+
+- Short breaks.
+- Long breaks.
+- Custom break duration.
+- Break countdown.
+- Automatic break suggestions.
+- Break notifications.
+- Skip break functionality.
+
+Allow users to configure their break preferences.
+
+---
+
+13. Progress Dashboard
+
+Create a professional statistics dashboard.
+
+Display:
+
+- Total study time.
+- Daily study time.
+- Weekly study time.
+- Monthly study time.
+- Completed sessions.
+- Missed sessions.
+- Subject distribution.
+- Study streaks.
+- Focus completion rate.
+- Daily and weekly charts.
+
+Use real data.
+
+Do not fabricate statistics.
+
+Show useful empty states when no data exists.
+
+---
+
+14. Notifications
+
+Implement local notifications for:
+
+- Upcoming sessions.
+- Session start.
+- Session completion.
+- Break start.
+- Break completion.
+- Daily study reminders.
+
+Allow users to customize notification preferences.
+
+Handle notification permissions correctly.
+
+---
+
+15. Settings
+
+Create a complete settings screen.
+
+Include:
+
+- Language selection.
+- Theme selection.
+- Notification settings.
+- Focus settings.
+- App blocking settings.
+- Default study duration.
+- Default break duration.
+- Data management.
+- Privacy information.
+- About StudyLock.
+
+---
+
+16. Local Data Storage
+
+Use persistent local storage.
+
+Store:
+
+- Subjects.
+- Study schedules.
+- Tasks.
+- Focus session history.
+- Settings.
+- Progress statistics.
+
+The app must work offline for all core features.
+
+Do not lose user data when the application closes.
+
+Implement a clean data model.
+
+---
+
+17. UI Quality
+
+Create polished reusable components.
+
+Examples:
+
+- StudySessionCard.
+- SubjectCard.
+- FocusTimer.
+- TaskChecklist.
+- WeeklyCalendar.
+- ProgressCard.
+- EmptyState.
+- PermissionDialog.
+- AppSelectionScreen.
+- CompletionScreen.
+
+Add smooth and meaningful animations.
+
+Avoid excessive animations.
+
+Make the interface feel premium.
+
+---
+
+18. Project Architecture
+
+Organize the code into clear modules.
+
+Suggested structure:
+
+app/
+_layout.tsx
+index.tsx
+schedule/
+focus/
+progress/
+settings/
+subjects/
+tasks/
+
+src/
+components/
+features/
+hooks/
+services/
+storage/
+models/
+constants/
+theme/
+localization/
+utils/
+
+Separate UI components from business logic.
+
+Use reusable hooks.
+
+Use TypeScript types.
+
+Avoid large monolithic components.
+
+---
+
+19. Development Process
+
+Build the application in phases.
+
+Phase 1:
+Create the Expo project, theme, navigation, and home screen.
+
+Phase 2:
+Implement subjects and study schedules.
+
+Phase 3:
+Implement tasks and persistent local storage.
+
+Phase 4:
+Implement the focus timer and session management.
+
+Phase 5:
+Implement notifications.
+
+Phase 6:
+Implement Android app blocking.
+
+Phase 7:
+Implement iOS Screen Time integration.
+
+Phase 8:
+Implement statistics and progress tracking.
+
+Phase 9:
+Test the application and fix errors.
+
+Start by implementing Phase 1 and continue with the next phases.
+
+Do not stop after creating the home screen.
+
+After each phase:
+
+- Explain what was implemented.
+- List the files created or modified.
+- Run the application.
+- Fix any errors.
+- Continue to the next phase.
+
+Prioritize working functionality over unnecessary complexity.
+
+---
+
+20. Final Requirements
+
+The finished application must be:
+
+- A real mobile application.
+- Compatible with Android and iOS.
+- Written in React Native and TypeScript.
+- Built using Expo.
+- Fully navigable.
+- Beautiful and modern.
+- Functional offline.
+- Persistent.
+- Arabic and English.
+- RTL compatible.
+- Responsive.
+- Free of placeholder functionality in core features.
+
+If a feature cannot be implemented directly in Replit, explain exactly why and provide the best technically valid alternative.
+
+Begin by creating the complete StudyLock project.
+
+First implement the application structure, theme, navigation, and home screen.
+
+Then continue building the remaining functionality.

@@ -1,0 +1,1 @@
+- [StudyLock blocking boundary](studylock-blocking-boundary.md) — never claim OS-level app blocking unless native permissions and behavior are implemented and verified.
